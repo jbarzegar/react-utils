@@ -2,7 +2,7 @@ import React from "react";
 
 type Props = {
   cond: Boolean,
-  True: React.ComponentType,
+  Then: React.ComponentType,
   Else: React.ComponentType
 };
 /* Conditional Rendering */
