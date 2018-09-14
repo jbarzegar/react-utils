@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { renderComponent } from "../utils";
 
 export default class Fetch extends Component {
   state = {
@@ -46,14 +47,13 @@ export default class Fetch extends Component {
   }
 
   render = () => {
-    const { data, didError } = this.state;
+    const { data, didError, requestFinished } = this.state;
+    const { LoadingComponent, ...props } = this.props
 
-    if (!this.state.requestFinished && this.props.LoadingComponent) {
-      return <this.props.LoadingComponent />;
+    if (!requestFinished && LoadingComponent) {
+      return <LoadingComponent />;
     }
 
-    return data !== null && typeof this.props.children === "function"
-      ? this.props.children({ data, didError })
-      : this.props.children;
+    return renderComponent(props, { data, didError });
   };
 }

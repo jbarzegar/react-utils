@@ -14,17 +14,22 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.10",
+    "@storybook/addon-knobs": "3.4.10",
     "@storybook/addon-links": "^3.4.10",
     "@storybook/addons": "^3.4.10",
     "@storybook/react": "^3.4.10",
+    "babel-cli": "6.26.0",
     "babel-core": "^6.26.3",
+    "babel-preset-flow": "6.23.0",
     "babel-runtime": "^6.26.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-powerplug": "^1.0.0-rc.1"
+    "storybook-construct": "0.1.2",
+    "storybook-readme": "4.0.0-beta1"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "flow": "flow"
   }
 }
