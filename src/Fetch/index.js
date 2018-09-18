@@ -8,7 +8,7 @@ export default class Fetch extends Component {
     requestFinished: false
   };
   createConfig() {
-    const config = {
+    let config = {
       ...this.props.config,
       method: "GET"
     };
@@ -19,15 +19,15 @@ export default class Fetch extends Component {
     throw new Error(e);
   }
   async sendFetch() {
-    const {
+    let {
       onError = this.defaultError,
       url,
       responseType = "json"
     } = this.props;
 
     try {
-      const resp = await fetch(url, this.createConfig());
-      const data = await resp[responseType]();
+      let resp = await fetch(url, this.createConfig());
+      let data = await resp[responseType]();
 
       return data;
     } catch (e) {
@@ -38,7 +38,7 @@ export default class Fetch extends Component {
 
   async componentDidMount() {
     try {
-      const data = await this.sendFetch();
+      let data = await this.sendFetch();
 
       this.setState({ data, requestFinished: true });
     } catch (e) {
@@ -47,8 +47,8 @@ export default class Fetch extends Component {
   }
 
   render = () => {
-    const { data, didError, requestFinished } = this.state;
-    const { LoadingComponent, ...props } = this.props
+    let { data, didError, requestFinished } = this.state;
+    let { LoadingComponent, ...props } = this.props;
 
     if (!requestFinished && LoadingComponent) {
       return <LoadingComponent />;

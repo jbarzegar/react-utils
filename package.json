@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.10",
+    "@storybook/addon-info": "3.4.10",
     "@storybook/addon-knobs": "3.4.10",
     "@storybook/addon-links": "^3.4.10",
     "@storybook/addons": "^3.4.10",
@@ -22,14 +23,15 @@
     "babel-core": "^6.26.3",
     "babel-preset-flow": "6.23.0",
     "babel-runtime": "^6.26.0",
+    "html-loader": "0.5.5",
+    "markdown-loader": "4.0.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "storybook-construct": "0.1.2",
-    "storybook-readme": "4.0.0-beta1"
+    "storybook-readme": "3.3.0"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "flow": "flow"
+    "build-storybook": "build-storybook"
   }
 }
